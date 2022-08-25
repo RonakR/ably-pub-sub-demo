@@ -1,0 +1,14 @@
+version: '3'
+services:
+  ably-publisher:
+    container_name: ably-publisher
+    restart: always
+    build: ./ably-pub
+    ports:
+      - '3000:3000'
+  ably-subscriber:
+    container_name: ably-subscriber
+    restart: always
+    build: ./ably-frontend
+    ports:
+      - '5173:5173'
